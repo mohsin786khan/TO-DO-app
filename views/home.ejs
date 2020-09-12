@@ -1,10 +1,124 @@
 <html>
     <head>
-    <title>
+        
+        <script src="https://kit.fontawesome.com/b9d3b32c3b.js" crossorigin="anonymous"></script>
+        <title>
         <%=title%>
-    </title>
-    </head>
-    <body>
-        <h1>codial /<%=title%></h1>
+      </title>
+     <link rel="stylesheet" href="\css\home.css">
+
+</head>
+
+    <body> 
+
+        <div class="heading1">
+        <h3 id=first-heading><%=title%></h3>
+         </div>
+  
+
+
+        <!-- creating form-->
+        <form action="/create-task" method="post" id="to-do-form" >
+           
+
+          <div class="description">
+            <label for="describe">Description</label>
+            <br>
+            <input type="text" name="description"id="describe" placeholder="what do you need ?"  required>
+          </div>
+        
+           
+          <div class="form-group">
+              <label for="category">CATEGORY</label>
+              <select name="category" id="category" required>
+                  <option value="" selected>Choose a Category</option>  
+                  <option value="SCHOOL">School</option>
+                  <option value="WORK">Work</option>
+                  <option value="SHOPPING">Shopping</option>
+                  <option value="GROCERY">Grocery</option>
+                  <option value="PERSONAL">Personal</option>
+                  <option value="EVENT">Event</option>
+                  <option value="OTHERS">Other</option>
+              </select>
+          </div>
+          
+      
+           
+              <div class="side-date">
+                  <label for="date"><P id="due-date">DUE DATE</P></label>
+                  <input type="date" name="duedate" id="date" placeholder="MM/DD/YYYY"  required>
+              </div>
+           
+
+              <div class="time-set">
+                  <label for="time">DUE TIME</label>
+                  <input type="time" id="time" name="duetime" placeholder="hr/min/am" >
+              </div>
+         
+          
+           <!--  submit button -->
+          <div class="add">
+
+              <span class="add-button">
+              <button type="submit">ADD TASK</button> 
+              </span>
+
+               <span class="delete-button">
+               <button type="submit"  form="delete-form"> DELETE TASK</button>
+               </span>
+              
+
+          </div>
+
+        </form>
+
+  
+
+     <!--
+
+       <% for(let i of task_list) {%>
+        <form action="/delete-task/<%= i.id%>" method="post" id="delete-form" >
+       <div id="added"> 
+      <input type="checkbox" name="<% i.id %>"></input>  
+        <p class="describe-it"><%=i. Description%></p>
+
+
+      <p class="date-it"><%=i.Date%></p>
+      
+      <span class="icon">
+      <i class="fas fa-calendar-alt"></i>
+       </span>
+      <p><%=i.Category%></p>
+        </div>
+        <input type="submit" value="Submit"> 
+      </form> 
+      <% } %>
+
+
+    -->
+
+    <form action="/delete-task" method="post" id="delete-form" >
+
+    <% for(let i of task_list) {%>
+     <div id="added"> 
+    <input type="checkbox" name="id"   value="<%= i._id %>" ></input>
+
+    <p class="describe-it"><%=i. Description%></p>
+
+    <p class="date-it"><%=i.Date%></p>
+  
+    <span class="icon">
+    <i class="fas fa-calendar-alt"></i>
+     </span>
+    <p><%=i.Category%></p>
+      </div>
+     
+    <% } %>
+   
+    <span class="delete-button">
+      <button type="submit"> DELETE TASK</button>
+      </span>
+
+  </form> 
     </body>
 </html>
