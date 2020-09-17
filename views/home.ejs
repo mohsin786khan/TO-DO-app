@@ -18,7 +18,7 @@
 
 
         <!-- creating form-->
-        <form action="/create-task" method="post" id="to-do-form" >
+        <form action="/create-task" method="post" >
            
 
           <div class="description">
@@ -63,11 +63,6 @@
               <button type="submit">ADD TASK</button> 
               </span>
 
-               <span class="delete-button">
-               <button type="submit"  form="delete-form"> DELETE TASK</button>
-               </span>
-              
-
           </div>
 
         </form>
@@ -99,7 +94,13 @@
 
     <form action="/delete-task" method="post" id="delete-form" >
 
+         
+    <span class="delete-button">
+      <button type="submit"> DELETE TASK</button>
+      </span>
+
     <% for(let i of task_list) {%>
+
      <div id="added"> 
     <input type="checkbox" name="id"   value="<%= i._id %>" ></input>
 
@@ -114,11 +115,8 @@
       </div>
      
     <% } %>
-   
-    <span class="delete-button">
-      <button type="submit"> DELETE TASK</button>
-      </span>
 
   </form> 
+
     </body>
 </html>
