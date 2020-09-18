@@ -131,12 +131,45 @@ outline: none;
     top:-85px;
 }
 
+.add-button{
+    width: 20%;
+    height: 50%;
+}
+.plus{
+    color:antiquewhite;
+    position: relative;
+    left: 45px;
+    top:15px;
+    z-index: 1;
+}
+
 .add-button button[type="submit"]{
     background: green;
-    width: 100%;
-    height: 40%;
-    font-size: 20px;
+    width: 65%;
+    height: 82%;
     cursor: pointer;
+    position: relative;
+    top: 10px;
+}
+.add-it{
+    color:bisque ;
+    font-size: 15px;
+}
+
+.delete-icon{
+    position: relative;
+    left:790px;
+    font-size: 25px;
+    top: -215px;
+    z-index: 1;
+    color: antiquewhite;
+}
+
+.delete-it{
+    color: bisque;
+    position: relative;
+    top: 2px;
+    left: 8px;
 }
 
 .delete-button button[type="submit"] {
@@ -159,37 +192,78 @@ outline: none;
     align-items: center;
     justify-content: center;
     position: relative;
-    top: -116px;
+    top: -179px;
+}
+
+
+.no-list-style li {
+    display: inline-block;
+    padding-left:10px;
+}
+
+.checkout{
+    position: relative;
+    right: 250px;
+}
+
+.describe-it{
+position: relative;
+right: 220px;
+top:-20px;
+font-family: sans-serif;
+font-size: 20px;
+}
+
+.calender-icon{
+    position: relative;
+    right: 350px;
+    top:20px;
+    font-size: 25px;
+    color: darkgray;
+}
+
+.date-it
+{
+    position: relative;
+    right: 340px;
+    top:20px;
+    font-size: 20px;
+}
+
+.task{
+    position: relative;
+    top:-20px;
+    right: -60px;
+    font-size: 20px;
     
 }
 
-
-.describe-it{
+.task-it{
+    position: relative;
+    top:20px;
     font-size: 20px;
+    right: 90px;
+}
+
+.timing{
     position: relative;
     top: -20px;
-    right: 500px;
-}
-
-.check-it{
-    position: relative;
-    top: -20px;
-    right: 513px;
-
-}
-
-.date-it{
-    position: relative;
-    top: 15px;
-    right: 470px;
     font-size: 20px;
+    left:300px;
 }
 
-.icon{
+.time-it{
     position: relative;
-    top: 15px;
-    right: 611px;
+    font-size: 20px;
+    left: 200px;
+    top: 20px;
+}
+
+.clock-icon{
     font-size: 20px;
     color: gray;
+    position: relative;
+    left: 200px;
+    top: 20px;
 }
 

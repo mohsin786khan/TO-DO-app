@@ -26,7 +26,8 @@ module.exports.create=function(req,res){
   Task.create({
       Description:req.body.description,
       Category:req.body.category,
-      Date:req.body.duedate
+      Date:req.body.duedate,
+      Time:req.body.duetime,
   },function(err,newTask){
    if(err){
        console.log('error in creating new task',err);

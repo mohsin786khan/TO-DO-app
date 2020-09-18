@@ -45,22 +45,26 @@
       
            
               <div class="side-date">
+
                   <label for="date"><P id="due-date">DUE DATE</P></label>
                   <input type="date" name="duedate" id="date" placeholder="MM/DD/YYYY"  required>
-              </div>
+                </div>
            
 
               <div class="time-set">
                   <label for="time">DUE TIME</label>
-                  <input type="time" id="time" name="duetime" placeholder="hr/min/am" >
-              </div>
+                
+                  <input type="time" id="time" name="duetime" placeholder="MM/DD/YYYY"    required>
+                
+                </div>   
          
           
            <!--  submit button -->
           <div class="add">
 
               <span class="add-button">
-              <button type="submit">ADD TASK</button> 
+               <span class="plus"> <i class="fas fa-plus"></i></span>
+              <button type="submit"><span class="add-it">ADD TASK</span></button> 
               </span>
 
           </div>
@@ -96,23 +100,51 @@
 
          
     <span class="delete-button">
-      <button type="submit"> DELETE TASK</button>
-      </span>
+     <span class="delete-icon"> <i class="fas fa-trash-alt"></i></span>
+    <button type="submit"><span class="delete-it">DELETE TASK</span></button>
+    </span>
 
     <% for(let i of task_list) {%>
 
-     <div id="added"> 
-    <input type="checkbox" name="id"   value="<%= i._id %>" ></input>
+     <div id="added">
+       <ul class="no-list-style">
 
-    <p class="describe-it"><%=i. Description%></p>
+        <li class="checkout">
+    <input type="checkbox" name="id"   value="<%= i._id %>"  ></input>
+        </li>
 
-    <p class="date-it"><%=i.Date%></p>
-  
-    <span class="icon">
-    <i class="fas fa-calendar-alt"></i>
-     </span>
-    <p><%=i.Category%></p>
+        <li class="describe-it">
+    <%=i. Description%>
+        </li>
+
+
+        <span class="calender-icon" >
+          <i class="fas fa-calendar-alt"></i>
+           </span>
+            </li>
+      
+        <li class="date-it">
+    <span><%=i.Date%></span>
+    </li>
+
+    <li>
+   
+
+      <li><span class="task">TASK TO BE DONE</span>
+    <span class="task-it"><%=i.Category%></span>
+    </li>
+
+    <li><span class="timing">time for task</span>
+    <span class="time-it"><%= i.Time %></span>
+      </li>
+
+   <li class="clock-icon">
+    <i class="fas fa-clock"></i>
+  </li>
+
+  </ul>
       </div>
+    
      
     <% } %>
 
